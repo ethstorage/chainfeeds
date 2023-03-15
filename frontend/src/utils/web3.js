@@ -1,7 +1,7 @@
 import {ethers} from "ethers";
 
-const BLOG_ADDRESS = '0x77C02b5c153EA6CFbCe0145206767CBBf09802b8';
-const FILE_ADDRESS = '0x662565c505881973F2A1d42546F3DA1ab7cFf889'.toLowerCase();
+const BLOG_ADDRESS = '0x0Ca41c3B35757b328c5A94fBD3e84d2cC3b61cfD';
+const FILE_ADDRESS = '0xb0690774E563E612B9aA27D409B68AC8760f8297'.toLowerCase();
 
 const FileAbi = [
     "  function getBlogList() public view returns (  " +
@@ -26,7 +26,6 @@ function BlogContract() {
 export async function getBlogList() {
     const contract = BlogContract();
     const result = await contract.getBlogList();
-    console.log(result,"----")
     const uuids = result[0];
     const titles = result[1];
     const descriptions = result[2];
